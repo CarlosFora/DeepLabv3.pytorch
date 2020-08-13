@@ -56,13 +56,13 @@ args = parser.parse_args()
 def main():
   assert torch.cuda.is_available()
   torch.backends.cudnn.benchmark = True
-  model_fname = 'data/deeplab_{0}_{1}_v3_{2}_epoch%d.pth'.format(
+  model_fname = '/content/DeepLabv3.pytorch/data/deeplab_{0}_{1}_v3_{2}_epoch%d.pth'.format(
       args.backbone, args.dataset, args.exp)
   if args.dataset == 'pascal':
-    dataset = VOCSegmentation('data/VOCdevkit',
+    dataset = VOCSegmentation('/content/DeepLabv3.pytorch/VOCdevkit',
         train=args.train, crop_size=args.crop_size)
   elif args.dataset == 'cityscapes':
-    dataset = Cityscapes('data/cityscapes',
+    dataset = Cityscapes('/content/DeepLabv3.pytorch/data/cityscapes',
         train=args.train, crop_size=args.crop_size)
   else:
     raise ValueError('Unknown dataset: {}'.format(args.dataset))
