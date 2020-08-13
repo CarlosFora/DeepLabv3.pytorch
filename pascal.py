@@ -36,8 +36,8 @@ class VOCSegmentation(data.Dataset):
       for line in lines:
         _image = _voc_root + line.split()[0]
         _mask = _voc_root + line.split()[1]
-        assert os.path.isfile(_image)
-        assert os.path.isfile(_mask)
+        #assert os.path.isfile(_image)
+        #assert os.path.isfile(_mask)
         self.images.append(_image)
         self.masks.append(_mask)
 
